@@ -1,0 +1,23 @@
+{
+  "name": "control_asistencia",
+  "version": "1.0.0",
+  "description": "Proyecto Final",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carolincamacho/control_asistencia.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carolincamacho/control_asistencia/issues"
+  },
+  "homepage": "https://github.com/carolincamacho/control_asistencia#readme",
+  "dependencies": {
+    "mysql2": "^3.14.2",
+    "pg-hstore": "^2.3.4"
+  }
+}
