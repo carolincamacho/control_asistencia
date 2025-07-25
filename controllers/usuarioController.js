@@ -1,6 +1,6 @@
 const Usuario = ('../Models/Usuario')// importa el modelo del usuario
 const express = require('express')//importa el modulo del express
-const bcrypt = require('bycrypt')// para el hasting de la contraseña
+const bcrypt = require('bcrypt')// para el hasting de la contraseña
 const jst = require('jsonwebtoken')//para el token jwt
 
 //controlador para crear un usuario
