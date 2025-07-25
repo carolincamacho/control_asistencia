@@ -26,4 +26,4 @@ const asistencia = sequelize.define('asistencia',{
     }
 })
 
-module.exports = Asistencia;
+module.exports = asistencia;
