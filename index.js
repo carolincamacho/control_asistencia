@@ -8,7 +8,7 @@ const app = express()
 app.use(express.json())
 
 //rutas de usuarios
-//app.use("/usuarios",usuarioRoutes)
+app.use("/usuarios",usuarioRoutes)
 const port = 3000;
 
 sequelize.sync().then(()=>
