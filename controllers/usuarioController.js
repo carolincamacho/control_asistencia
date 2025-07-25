@@ -49,6 +49,3 @@ exports.registrarUsuario = async (req, res) => {
         res.status(500).json({ mensaje: 'Error al registrar usuario', error: error.message });
     }
 }
-
-
-//module.exports = router; // Exporta las rutas para que puedan ser utilizadas en index.js
