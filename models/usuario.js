@@ -29,7 +29,11 @@ const Usuario = sequelize.define ('usuario',
     password:
     {
         type:DataTypes.STRING,
-        unique:true,
+        allowNull:false
+    },
+    rol:
+    {
+        type:DataTypes.STRING,
         allowNull:false
     }
 })
