@@ -1,5 +1,6 @@
 const express = require ("express");
 const usuarioRoutes = require ("./routes/usuarioRoutes");
+const tiposRoutes = require ("./routes/tiposRoutes");
 const sequelize = require("./config/database");
 
 const app = express()
@@ -9,7 +10,10 @@ app.use(express.json())
 
 //rutas de usuarios
 app.use("/usuarios",usuarioRoutes)
+app.use("/tipos",tiposRoutes)
+
 const port = 3000;
+
 
 sequelize.sync().then(()=>
 {
