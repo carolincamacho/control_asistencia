@@ -1,11 +1,11 @@
-const { DataTypes }=require('sequelize')
+const { DataTypes, Model }=require('sequelize')
 const sequelize = require('../config/database')
 
 const tipos = sequelize.define ('tipos',
 {
     tipo_estudiante_id:
     {
-        type:DataTypes.INTEGER,
+        type:DataTypes.STRING(2),
         unique:true,
         allowNull:false
     },
