@@ -6,7 +6,6 @@ const Usuario = sequelize.define ('Usuario',
     tipo_estudiante_id:
     {
         type:DataTypes.STRING,
-        unique:true,
         allowNull:false
     },
     estudiante_id:

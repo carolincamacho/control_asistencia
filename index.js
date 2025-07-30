@@ -1,16 +1,24 @@
 const express = require ("express");
 const usuarioRoutes = require ("./routes/usuarioRoutes");
+const tiposRoutes = require ("./routes/tiposRoutes");
 const sequelize = require("./config/database");
-require("dotenv").config();
+const asistenciaRoutes = require('./routes/asistenciaRoutes');
+
 const app = express()
 
 //para leer el json
 app.use(express.json())
 
 //rutas de usuarios
-app.use("/usuario",usuarioRoutes)
-//const port = 3000;
-const port = process.env.PORT;
+
+app.use('/asistencia',asistenciaRoutes)
+
+app.use("/usuarios",usuarioRoutes)
+app.use("/tipos",tiposRoutes)
+
+const port = 3000;
+
+
 sequelize.sync().then(()=>
 {
     app.listen(port,()=>
