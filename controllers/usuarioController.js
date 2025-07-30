@@ -1,7 +1,18 @@
-const Usuario = ('../Models/Usuario')// importa el modelo del usuario
+const Usuario = require('../models/usuario')// importa el modelo del usuario
 const express = require('express')//importa el modulo del express
 const bcrypt = require('bcrypt')// para el hasting de la contraseña
 const jst = require('jsonwebtoken')//para el token jwt
+
+exports.obtenerUsuarios= async(req,res)=>{
+    try{
+        const usuarios= await Usuario.findAll();
+        return res.status(200).json({usuarios:usuarios})
+    }catch(error){
+        console.log("error al ingresar a la ruta", error)
+    }
+
+}
+
 
 //controlador para crear un usuario
 exports.ingresarUsuario = async (req, res) => {
@@ -19,7 +30,7 @@ exports.ingresarUsuario = async (req, res) => {
             return res.status(401).json({ mensaje: 'Contraseña incorrecta' });
         }
         // si la contraseña es valida, genera un token JWT
-        const token = jst.sign({ id: usuario.id, email: usuario.email }, 'secretKey',{ expiresIn: '1h' }); // 'secretKey' debe ser una clave secreta segura y no debe ser expuesta en el código fuente
+        const token = jst.sign({ id: usuario.id, email: usuario.email },process.env.token ,{ expiresIn: '1h' }); // 'secretKey' debe ser una clave secreta segura y no debe ser expuesta en el código fuente
         // retorna el token y el usuario
         res.status(200).json({ mensaje: 'Usuario ingresado correctamente', usuario, token });
 

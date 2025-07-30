@@ -2,7 +2,7 @@ const express = require ('express')//importa el modulo de express
 const router = express.Router();//crea un enrutador de express 
 const controlador = require ('../controllers/usuarioController')//importa el controlador de usuario
 
-
+router.get("/usuario/todos", controlador.obtenerUsuarios);
 
 //ruta para logear usuarios
 router.post('/usuario/ingresar',controlador.ingresarUsuario);
