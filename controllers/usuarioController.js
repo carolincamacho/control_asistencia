@@ -46,7 +46,8 @@ exports.registrarUsuario = async (req, res) => {
             email: req.body.email,
             password: password,
             tipo_estudiante_id: req.body.tipo_estudiante_id,
-            estudiante_id: req.body.estudiante_id
+            estudiante_id: req.body.estudiante_id,
+            rol: req.body.rol
         });
         res.status(201).json({ mensaje: 'Usuario registrado exitosamente', usuario });
     } catch (error) {
