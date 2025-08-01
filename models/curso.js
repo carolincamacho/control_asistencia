@@ -5,6 +5,7 @@ const curso = sequelize.define('curso',{
     codigo:{
         type:DataTypes.STRING,
         allowNull:false,
+        unique:true,
     },
 
     nombre_curso:{
