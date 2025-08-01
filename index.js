@@ -13,7 +13,7 @@ app.use(express.json())
 
 app.use('/asistencia',asistenciaRoutes)
 
-app.use("/usuarios",usuarioRoutes)
+app.use("/usuario",usuarioRoutes)
 app.use("/tipos",tiposRoutes)
 
 const port = 3000;
