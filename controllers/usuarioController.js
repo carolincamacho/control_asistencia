@@ -1,4 +1,4 @@
-const Usuario = require('../models/Usuario');// Importa el modelo de Usuario
+const Usuario = require('../models/usuario');// Importa el modelo de Usuario
 const express = require('express'); // Importa el módulo de Express
 const bcrypt = require('bcrypt'); // Importa bcrypt para el hash de contraseñas
 const jst = require('jsonwebtoken'); // Importa jsonwebtoken para la autenticación

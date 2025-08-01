@@ -6,7 +6,7 @@ exports.registrarEntrada = async (req,res)=>{
     //obtener los datos del json que llegaran por el body
     const {estudiante_id}=req.body;
     const ahora = new Date();
-
+  
     //insertar la nueva entrada a la BBDD
     const nuevaEntrada ={
         estudiante_id,
@@ -14,7 +14,7 @@ exports.registrarEntrada = async (req,res)=>{
         hora_entrada: ahora.toTimeString().split(' ')[0]           // hh:mm:ss
     };
 
-    //entregar una respuesta al cliente
+    // //entregar una respuesta al cliente
     const nuevo = await asistencia.create(nuevaEntrada);
         
     res.status(201).json({
