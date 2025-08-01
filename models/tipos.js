@@ -7,7 +7,8 @@ const tipos = sequelize.define ('tipos',
     {
         type:DataTypes.STRING(2),
         unique:true,
-        allowNull:false
+        allowNull:false,
+        primaryKey:true
     },
     descripcion:
     {
