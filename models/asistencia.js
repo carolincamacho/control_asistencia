@@ -1,6 +1,7 @@
 const {DataTypes} = require('sequelize');
 const sequelize = require('../config/database');
 const usuario=require('./usuario');
+const curso=require('./curso');
 
 const asistencia = sequelize.define('asistencia',{
     estudiante_id:{
@@ -13,18 +14,27 @@ const asistencia = sequelize.define('asistencia',{
     },
 
     fecha:{
-        type:DataTypes.STRING,
+        type:DataTypes.DATEONLY,
         allowNull:false,
     },
 
     hora_entrada:{
-        type:DataTypes.STRING,
+        type:DataTypes.TIME,
         allowNull:false,
     },
 
     hora_salida:{
         type:DataTypes.TIME,
         allowNull:true,
+    },
+
+    curso:{
+        type:DataTypes.STRING,
+        allowNull:false,
+        references:{
+            model: curso,
+            key:'codigo'
+        }
     }
 })
 
