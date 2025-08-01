@@ -11,7 +11,7 @@ app.use(express.json())
 
 //rutas de usuarios
 
-app.use('/asistencia',asistenciaRoutes)
+app.use('/asistencias',asistenciaRoutes)
 
 app.use("/usuarios",usuarioRoutes)
 app.use("/tipos",tiposRoutes)
