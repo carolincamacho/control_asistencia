@@ -56,8 +56,7 @@ exports.registrarUsuario = async (req, res) => {
 
 
 //controlador
-exports.obtenerUsuarios=async(req,res)=>
-{
+exports.obtenerUsuarios=async(req,res)=>{
     const usuarios = await Usuario.findAll()
     res.json(usuarios)
 }
